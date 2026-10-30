@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="《肠道小宇宙：一座花园，连接全身》六关微生态证据探索。通过生态剖面、生活情境、菌群辨伪、病例分流、证据审查与全身联动，练习科学边界。"
+    />
+    <meta name="theme-color" content="#10281f" />
+    <title>肠道小宇宙：一座花园，连接全身</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2310281f'/%3E%3Cpath d='M32 51c-2-11 2-23 15-34-3 15-8 25-15 34Z' fill='%2397d86f'/%3E%3Cpath d='M31 51C25 39 21 30 17 18c10 8 15 19 14 33Z' fill='%23f3bd4b'/%3E%3Ccircle cx='47' cy='22' r='4' fill='%23f47763'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="content.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#appMain">跳到主要内容</a>
+    <div class="ambient ambient-a" aria-hidden="true"></div>
+    <div class="ambient ambient-b" aria-hidden="true"></div>
+
+    <div class="app-shell">
+      <header class="topbar">
+        <button class="brand" type="button" data-action="go-home" aria-label="回到当前探索站">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 44 44" role="img">
+              <path d="M22 36c-1.8-8.4 1.6-17.2 10.8-25.2C31 21.6 27.3 29.9 22 36Z"></path>
+              <path d="M21.6 36c-4.4-8.7-7.3-15-10.3-23.5 7.5 5.7 11.1 13.7 10.3 23.5Z"></path>
+              <circle cx="33.4" cy="14.5" r="3.1"></circle>
+            </svg>
+          </span>
+          <span class="brand-copy">
+            <span class="brand-name">肠道小宇宙</span>
+            <span class="brand-sub">一座花园，连接全身</span>
+          </span>
+        </button>
+
+        <nav class="journey-nav" aria-label="六关探索进度">
+          <ol id="journeyList"></ol>
+        </nav>
+
+        <div class="utility-bar">
+          <button
+            class="icon-button"
+            type="button"
+            data-action="toggle-motion"
+            aria-label="切换减少动态效果"
+            title="减少动态效果"
+          >
+            <span data-icon="sparkles" aria-hidden="true"></span>
+          </button>
+          <button
+            class="icon-button"
+            type="button"
+            data-action="toggle-text"
+            aria-label="切换大字号"
+            title="切换大字号"
+          >
+            <span data-icon="type" aria-hidden="true"></span>
+          </button>
+          <button
+            class="icon-button"
+            type="button"
+            data-action="restart"
+            aria-label="重新开始探索"
+            title="重新开始"
+          >
+            <span data-icon="rotate" aria-hidden="true"></span>
+          </button>
+          <div class="save-status" id="saveStatus" aria-live="polite">
+            <span class="save-dot"></span>
+            <span>本地保存</span>
+          </div>
+        </div>
+      </header>
+
+      <main id="appMain" tabindex="-1"></main>
+
+      <footer class="site-footer">
+        <p>
+          科普互动体验 · 不构成医疗建议 · 证据表述参考公开共识，上线前需按最新版指南复核
+        </p>
+        <a href="#scienceSources" data-action="open-sources">科学来源与证据说明</a>
+      </footer>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <canvas id="shareCanvas" width="1080" height="1350" hidden></canvas>
+
+    <dialog class="source-dialog" id="sourceDialog">
+      <div class="dialog-head">
+        <div>
+          <span class="eyebrow">证据先于结论</span>
+          <h2>科学来源与边界</h2>
+        </div>
+        <button class="icon-button" type="button" data-action="close-sources" aria-label="关闭">
+          <span data-icon="close" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div id="sourceDialogBody"></div>
+    </dialog>
+  </body>
+</html>
